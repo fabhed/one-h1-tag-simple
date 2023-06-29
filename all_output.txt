@@ -1,0 +1,48 @@
+For a simple website with only one h1 tag, we will need the following files:
+
+1. `app.py`: This is the main entry point of our application. It will contain the Flask application instance and the route definition for our single page.
+
+2. `templates/index.html`: This is the HTML template for our single page. It will contain the h1 tag with the text "Fabian was here".
+
+3. `requirements.txt`: This file will list all the Python dependencies that our application needs to run.
+
+Let's start with the `app.py` file:
+
+app.py
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    # This function will render the index.html template when the home route is accessed.
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+Next, we will create the `index.html` file inside a `templates` directory:
+
+templates/index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Website</title>
+</head>
+<body>
+    <h1>Fabian was here</h1>
+</body>
+</html>
+```
+
+Finally, we will create the `requirements.txt` file to list our Python dependencies:
+
+requirements.txt
+```txt
+Flask==1.1.2
+```
+
+To run this application, you would first install the dependencies with `pip install -r requirements.txt`, and then run the application with `python app.py`. The website will be accessible at `http://localhost:5000`.
